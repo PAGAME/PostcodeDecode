@@ -11,15 +11,12 @@ def generate_dict():
     pattern = re.compile('([0-9]+)')
     for line in file_obj:
         list = re.split(pattern, line)
-        print list
         list.remove('\n')
         i = 0
-        print len(list)
         while i<len(list):
             Dict["%s"%(list[i])] = str(list[i+1])
             print Dict["%s"%(list[i])]
             i = i + 2
-        print line
     return Dict
     
 if __name__ == "__main__":
