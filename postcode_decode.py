@@ -6,7 +6,8 @@ import jieba.posseg
 import postcode_generate_dict
 
 def decodePostcode(strs):
-    '''我们在这里假设，大家都习惯将大的地域写在地址的前面 eg:不会写 XXX单元 XXX小区 垂柳街 北京市'''
+    '''我们在这里假设，大家都习惯将大的地域写在地址的前面 eg:不会写 XXX单元 XXX小区 垂柳街 北京市
+    返回一个包含字符串 K-V为 地点-邮编 的字典'''
     words = jieba.posseg.cut(strs)
     dictW = {}
     i = 1
@@ -31,9 +32,6 @@ def getDict_and_compare(dict_NS):
             print '查找地区邮编成功'
         else:
             print "没有查找到相应的邮编"
-    for a, b in postcodeDict.items():
-        print a
-        print b
     return postcodeDict
 
 if __name__ =="__main__":
